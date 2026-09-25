@@ -6,7 +6,7 @@ from system.attribute import Attribute
 from system.errors import (
     InvalidAmountError, 
     InvalidAttributeError,
-    InsufficientPointError,
+    InsufficientPointsError,
 )
 
 STARTING_LEVEL = 1
@@ -39,7 +39,7 @@ class Player:
 
         # check if user has enough points to spend
         if amount > self._ability_points:
-            raise InsufficientPointError(f"Tried to spend {amount}, but only {self._ability_points} available.")
+            raise InsufficientPointsError(f"Tried to spend {amount}, but only {self._ability_points} available.")
 
         self._ability_points -= amount
         self.attributes[attribute] += amount

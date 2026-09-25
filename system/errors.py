@@ -8,5 +8,5 @@ class InvalidAmountError(Exception):
 class InvalidAttributeError(Exception):
     """The thing given is not one of the five attributes."""
 
-class InsufficientPointError(Exception):
+class InsufficientPointsError(Exception):
     """The player tried to spend more points than they have."""
