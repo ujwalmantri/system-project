@@ -12,8 +12,12 @@ Early development. Currently working:
 - Player with level, ability points, and five attributes
 - Adding ability points (validated)
 - Allocating points to an attribute (validated)
+- Quest with id, name, reward points, and status (not started / completed)
+- Completing a quest, guarded against double-completion
+- Unit tests for both Player and Quest (11 tests)
 
-Not built yet: tests, quests, streaks, persistence.
+Not built yet: quest engine (connecting quest completion to player rewards),
+streaks, persistence, loot boxes.
 
 ## Setup
 

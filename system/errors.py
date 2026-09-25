@@ -10,3 +10,6 @@ class InvalidAttributeError(Exception):
 
 class InsufficientPointsError(Exception):
     """The player tried to spend more points than they have."""
+
+class QuestAlreadyCompletedError(Exception):
+    """The quest was already completed and can't be completed again"""
