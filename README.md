@@ -15,9 +15,12 @@ Early development. Currently working:
 - Quest with id, name, reward points, and status (not started / completed)
 - Completing a quest, guarded against double-completion
 - QuestService: connects quest completion to player rewards
-- Unit tests for Player, Quest, and QuestService (13 tests)
+- StreakTracker: tracks daily completions, consecutive streaks, missed days
+- ProgressionService: levels up the player every 10 total completed days
+  (levels don't regress if a streak breaks)
+- Unit tests for all of the above (21 tests)
 
-Not built yet: streaks, persistence, loot boxes.
+Not built yet: persistence, loot boxes, extra quests.
 
 ## Setup
 

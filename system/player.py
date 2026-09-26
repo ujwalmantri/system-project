@@ -15,7 +15,7 @@ STARTING_ATTRIBUTE_VALUE = 10
 class Player:
     def __init__(self, name):
         self.name = name
-        self.level = STARTING_LEVEL
+        self._level = STARTING_LEVEL
         self._ability_points = 0
         self.attributes = {}
         for attribute in Attribute:
@@ -48,3 +48,12 @@ class Player:
     @property
     def ability_points(self):
         return self._ability_points    
+
+    @property
+    def level(self):
+        return self._level
+
+    def set_level(self, level):
+        if isinstance(level, bool) or not isinstance(level, int) or level < 1:
+            raise InvalidAmountError(f"{level!r} is not a valid level.")
+        self._level = level
