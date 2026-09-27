@@ -18,9 +18,13 @@ Early development. Currently working:
 - StreakTracker: tracks daily completions, consecutive streaks, missed days
 - ProgressionService: levels up the player every 10 total completed days
   (levels don't regress if a streak breaks)
-- Unit tests for all of the above (21 tests)
+- ExtraQuest: unlimited-completion optional quest (dataclass, no status)
+- ExtraQuestService: grants a small reward per completion, gated by a
+  `confirmed` flag (self-accountability, does not affect streak)
+- Unit tests for all of the above (24 tests)
 
-Not built yet: persistence, loot boxes, extra quests.
+Not built yet: persistence, loot boxes, quest verification for daily_workout,
+progression history.
 
 ## Setup
 
