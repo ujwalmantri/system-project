@@ -15,16 +15,16 @@ Early development. Currently working:
 - Quest with id, name, reward points, and status (not started / completed)
 - Completing a quest, guarded against double-completion
 - QuestService: connects quest completion to player rewards
-- StreakTracker: tracks daily completions, consecutive streaks, missed days
+- StreakTracker: tracks daily completions, consecutive streaks, missed days,
+  and keeps a permanent, immutable history of completion events
 - ProgressionService: levels up the player every 10 total completed days
   (levels don't regress if a streak breaks)
 - ExtraQuest: unlimited-completion optional quest (dataclass, no status)
 - ExtraQuestService: grants a small reward per completion, gated by a
   `confirmed` flag (self-accountability, does not affect streak)
-- Unit tests for all of the above (24 tests)
+- Unit tests for all of the above (27 tests)
 
-Not built yet: persistence, loot boxes, quest verification for daily_workout,
-progression history.
+Not built yet: persistence, loot boxes, quest verification for daily_workout.
 
 ## Setup
 
