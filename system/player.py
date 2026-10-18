@@ -17,9 +17,9 @@ class Player:
         self.name = name
         self._level = STARTING_LEVEL
         self._ability_points = 0
-        self.attributes = {}
+        self._attributes = {}
         for attribute in Attribute:
-            self.attributes[attribute] = STARTING_ATTRIBUTE_VALUE
+            self._attributes[attribute] = STARTING_ATTRIBUTE_VALUE
 
     def _check_amount(self, amount):
         if isinstance(amount, bool) or not isinstance(amount, int) or amount <= 0:
@@ -42,8 +42,7 @@ class Player:
             raise InsufficientPointsError(f"Tried to spend {amount}, but only {self._ability_points} available.")
 
         self._ability_points -= amount
-        self.attributes[attribute] += amount
-        
+        self.set_attribute(attribute, self._attributes[attribute] + amount)        
 
     @property
     def ability_points(self):
@@ -53,7 +52,18 @@ class Player:
     def level(self):
         return self._level
 
+    @property
+    def attributes(self):
+        return dict(self._attributes)
+
     def set_level(self, level):
         if isinstance(level, bool) or not isinstance(level, int) or level < 1:
             raise InvalidAmountError(f"{level!r} is not a valid level.")
         self._level = level
+
+    def set_attribute(self, attribute, value):
+        if not isinstance(attribute, Attribute):
+            raise InvalidAttributeError(f"{attribute!r} is not a valid attribute.")
+        if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+            raise InvalidAmountError(f"{value!r} is not a valid amount.")
+        self._attributes[attribute] = value

@@ -43,9 +43,9 @@ class PlayerRepository:
         player = Player(name)
         player.set_level(level)
         player.add_ability_points(ability_points)
-        player.attributes[Attribute.STRENGTH] = strength
-        player.attributes[Attribute.AGILITY] = agility
-        player.attributes[Attribute.VITALITY] = vitality
-        player.attributes[Attribute.INTELLIGENCE] = intelligence
-        player.attributes[Attribute.PERCEPTION] = perception
+        player.set_attribute(Attribute.STRENGTH, strength)
+        player.set_attribute(Attribute.AGILITY, agility)
+        player.set_attribute(Attribute.VITALITY, vitality)
+        player.set_attribute(Attribute.INTELLIGENCE, intelligence)
+        player.set_attribute(Attribute.PERCEPTION, perception)
         return player

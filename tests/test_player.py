@@ -53,5 +53,14 @@ class TestAllocatePoints(unittest.TestCase):
         with self.assertRaises(InvalidAttributeError):
             self.player.allocate_points("strength",1)
 
+class TestSetAttribute(unittest.TestCase):
+    def setUp(self):
+        self.player = Player("Hunter")
+
+    def test_set_attribute_rejects_invalid_amount(self):
+        with self.assertRaises(InvalidAmountError):
+            self.player.set_attribute(Attribute.STRENGTH, -5)
+        self.assertEqual(self.player.attributes[Attribute.STRENGTH], 10)
+
 if __name__ == "__main__":
     unittest.main()
