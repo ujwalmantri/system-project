@@ -9,8 +9,8 @@ DB_PATH = "system.db"
 def get_connections():
     return sqlite3.connect(DB_PATH)
 
-def create_tables(conneection):
-    conneection.execute("""
+def create_tables(connection):
+    connection.execute("""
         CREATE TABLE IF NOT EXISTS players (
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
@@ -23,4 +23,12 @@ def create_tables(conneection):
             perception INTEGER NOT NULL
         )
     """)
-    conneection.commit()
+    connection.execute("""
+        CREATE TABLE IF NOT EXISTS quests (
+            quest_id TEXT PRIMARY KEY,
+            name TEXT NOT NULL,
+            reward_points INTEGER NOT NULL,
+            status TEXT NOT NULL
+        )
+    """)
+    connection.commit()

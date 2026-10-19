@@ -23,9 +23,10 @@ Early development. Currently working:
 - ExtraQuestService: grants a small reward per completion, gated by a
   `confirmed` flag (self-accountability, does not affect streak)
 - SQLite persistence for Player (save/load) via PlayerRepository
-- Unit tests for all of the above (28 tests)
+- SQLite persistence for Quest (save/load) via QuestRepository
+- Unit tests for all of the above (31 tests)
 
-Not built yet: persistence for Quest/StreakTracker/history, loot boxes, quest verification for daily_workout, attribute guard (tracked as a known gap, see code comments).
+Not built yet: persistence for StreakTracker/history, loot boxes, quest verification for daily_workout, attribute guard (tracked as a known gap, see code comments).
 
 ## Setup
 
