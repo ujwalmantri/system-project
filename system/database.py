@@ -31,4 +31,22 @@ def create_tables(connection):
             status TEXT NOT NULL
         )
     """)
+    connection.execute("""
+        CREATE TABLE IF NOT EXISTS streaks (
+            id INTEGER PRIMARY KEY,
+            current_streak INTEGER NOT NULL,
+            longest_streak INTEGER NOT NULL,
+            total_completed_days INTEGER NOT NULL,
+            last_completed_date TEXT
+        )
+    """)
+    connection.execute("""
+        CREATE TABLE IF NOT EXISTS completion_events (
+            id INTEGER PRIMARY KEY,
+            streak_id INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            streak_at_completion INTEGER NOT NULL,
+            total_completed_days_at_completion INTEGER NOT NULL
+        )
+    """)
     connection.commit()

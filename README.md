@@ -24,10 +24,10 @@ Early development. Currently working:
   `confirmed` flag (self-accountability, does not affect streak)
 - SQLite persistence for Player (save/load) via PlayerRepository
 - SQLite persistence for Quest (save/load) via QuestRepository
-- Unit tests for all of the above (31 tests)
+- SQLite persistence for StreakTracker and completion history via StreakTrackerRepository
+- Unit tests for all of the above (34 tests)
 
-Not built yet: persistence for StreakTracker/history, loot boxes, quest verification for daily_workout, attribute guard (tracked as a known gap, see code comments).
-
+Not built yet: loot boxes, quest verification for daily_workout, attribute guard (tracked as a known gap, see code comments).
 ## Setup
 
     python -m venv .venv
