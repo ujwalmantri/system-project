@@ -31,5 +31,21 @@ class TestPlayerRepository(unittest.TestCase):
         self.assertEqual(loaded.ability_points, 1)
         self.assertEqual(loaded.attributes[Attribute.STRENGTH], 12)
 
+
+    def test_saving_twice_updates_rather_than_duplicates(self):
+        player = Player("Hunter")
+        self.repository.save(player)
+
+        player.add_ability_points(5)
+        self.repository.save(player)  # save again, should UPDATE not INSERT
+
+        row_count = self.connection.execute(
+            "SELECT COUNT(*) FROM players"
+        ).fetchone()[0]
+        self.assertEqual(row_count, 1)
+
+        loaded = self.repository.load(player_id=1)
+        self.assertEqual(loaded.ability_points, 5)
+
 if __name__ == "__main__":
     unittest.main()

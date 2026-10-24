@@ -6,7 +6,7 @@ import sqlite3
 
 DB_PATH = "system.db"
 
-def get_connections():
+def get_connection():
     return sqlite3.connect(DB_PATH)
 
 def create_tables(connection):

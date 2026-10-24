@@ -26,8 +26,11 @@ Early development. Currently working:
 - SQLite persistence for Quest (save/load) via QuestRepository
 - SQLite persistence for StreakTracker and completion history via StreakTrackerRepository
 - Unit tests for all of the above (34 tests)
+- main.py: ties everything together — loads/creates the player and streak,
+  completes the daily quest once per day, saves state back
+- Unit tests for all of the above (35 tests)
 
-Not built yet: loot boxes, quest verification for daily_workout, attribute guard (tracked as a known gap, see code comments).
+Not built yet: loot boxes, quest verification for daily_workout, attribute guard (tracked as a known gap, see code comments). 
 ## Setup
 
     python -m venv .venv
