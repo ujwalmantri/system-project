@@ -19,9 +19,6 @@ Early development. Currently working:
   and keeps a permanent, immutable history of completion events
 - ProgressionService: levels up the player every 10 total completed days
   (levels don't regress if a streak breaks)
-- ExtraQuest: unlimited-completion optional quest (dataclass, no status)
-- ExtraQuestService: grants a small reward per completion, gated by a
-  `confirmed` flag (self-accountability, does not affect streak)
 - SQLite persistence for Player (save/load) via PlayerRepository
 - SQLite persistence for Quest (save/load) via QuestRepository
 - SQLite persistence for StreakTracker and completion history via StreakTrackerRepository
